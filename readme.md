@@ -10,27 +10,18 @@ input values in `variables.tf` or provide your own `.tfvars` file to customize i
 - Terraform 1.5.7 or later
 - A Harness Next Gen platform API key with permission to create projects
 
-Set the API key using either a sensitive Terraform input or the provider's
-`HARNESS_PLATFORM_API_KEY` environment variable. Do not put it in Terraform
-files or commit it.
+Set the API key as the provider's sensitive `HARNESS_PLATFORM_API_KEY`
+environment variable. Do not put it in Terraform files or commit it.
 
 PowerShell:
 
 ```powershell
-# Terraform input variable
-$env:TF_VAR_harness_platform_key = "<your_harness_platform_api_key>"
-
-# Or provider environment variable
 $env:HARNESS_PLATFORM_API_KEY = "<your_harness_platform_api_key>"
 ```
 
 Bash:
 
 ```bash
-# Terraform input variable
-export TF_VAR_harness_platform_key="<your_harness_platform_api_key>"
-
-# Or provider environment variable
 export HARNESS_PLATFORM_API_KEY="<your_harness_platform_api_key>"
 ```
 
@@ -79,8 +70,7 @@ module "connectors" {
 ```
 
 In Terraform Cloud, set the workspace working directory to the repository root
-for this existing root configuration. Either configure `harness_platform_key`
-as a sensitive Terraform variable or `HARNESS_PLATFORM_API_KEY` as a sensitive
-environment variable. Set `HARNESS_ACCOUNT_ID` as a Terraform variable (it
-takes precedence over `account_id`). Values assigned to module inputs must be
-declared in the root configuration and passed to the modules.
+for this existing root configuration. Configure `HARNESS_PLATFORM_API_KEY` as a
+sensitive environment variable. Set `HARNESS_ACCOUNT_ID` as a Terraform
+variable (it takes precedence over `account_id`). Values assigned to module
+inputs must be declared in the root configuration and passed to the modules.

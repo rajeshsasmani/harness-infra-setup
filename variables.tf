@@ -16,13 +16,6 @@ variable "harness_platform_url" {
   default     = "https://app.harness.io/gateway"
 }
 
-variable "harness_platform_key" {
-  description = "Harness NextGen platform API key."
-  type        = string
-  sensitive   = true
-  default     = null
-}
-
 variable "organization_id" {
   description = "Harness organization identifier."
   type        = string
