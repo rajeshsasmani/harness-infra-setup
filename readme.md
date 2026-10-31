@@ -39,3 +39,36 @@ Terraform state file tracks the created project and should not be committed.
 
 To remove the project managed by this configuration, run `terraform destroy`.
 
+## Reusable modules
+
+The `modules/project` directory contains a reusable Harness project module.
+The `modules/connectors` directory contains a connector module for GitHub,
+Jenkins, AWS, and Helm. Connector credential values must be Harness secret
+references; do not put plaintext credentials in Terraform files or workspace
+variables.
+
+The root configuration above continues to create the example project directly.
+To use the reusable modules, add module blocks to a root Terraform configuration
+and pass the module inputs there. For example:
+
+```hcl
+module "connectors" {
+  source = "./modules/connectors"
+
+  github = {
+    identifier = "github_preprod"
+    name       = "GitHub Pre-prod"
+    username   = var.github_username
+    token_ref  = "account.github_pat"
+  }
+
+  jenkins = null
+  aws     = null
+  helm    = null
+}
+```
+
+In Terraform Cloud, set the workspace working directory to the repository root
+for this existing root configuration. Values assigned to module inputs must be
+declared in the root configuration and passed to the modules. Configure the
+Harness API key as a sensitive environment variable.
