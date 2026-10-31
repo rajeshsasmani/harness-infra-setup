@@ -10,9 +10,9 @@ terraform {
 }
 
 provider "harness" {
-  account_id = var.account_id
-  endpoint         = var.harness_platform_url
-  platform_api_key = var.harness_platform_key
+  account_id        = var.account_id
+  endpoint          = var.harness_platform_url
+  platform_api_key  = var.harness_platform_key
 }
 
 module "project" {
@@ -20,7 +20,7 @@ module "project" {
 
   identifier  = var.project_identifier
   name        = var.project_name
-  org_id      = var.org_id
+  org_id      = var.organization_id
   description = var.project_description
   color       = var.project_color
   tags        = var.project_tags
@@ -30,7 +30,7 @@ module "connectors" {
   source = "./modules/connectors"
   depends_on = [module.project]
 
-  org_id = var.org_id
+  org_id = var.organization_id
 
   github = null
   jenkins = null
