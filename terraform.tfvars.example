@@ -1,0 +1,71 @@
+# Example Terraform variable values for Harness infrastructure setup
+# Copy this file to terraform.tfvars and adjust the values as needed.
+
+account_id = "A7G39RsCSRGmG1_n8-q9Tw"
+organization_id = "default"
+
+project_name        = "AWS EKS Project"
+project_identifier  = "aws_eks_project"
+project_description = "Managed by Terraform."
+project_color       = "#0063F7"
+project_tags        = ["managed-by-terraform"]
+
+# Set a connector to null to skip creating it.
+# Set it to an object to enable and configure it.
+
+github = null
+# github = {
+#   identifier      = "github-connector"
+#   name            = "GitHub"
+#   username        = "my-github-user"
+#   token_ref       = "account.github_token"
+#   url             = "https://github.com"
+#   connection_type = "Account"
+#   validation_repo = "my-org/my-repo"
+#   delegate_selectors = ["delegate1"]
+#   description = "GitHub connector"
+#   tags        = ["managed-by-terraform"]
+#   org_id      = null
+#   project_id  = null
+# }
+
+jenkins = null
+# jenkins = {
+#   identifier         = "jenkins-connector"
+#   name               = "Jenkins"
+#   jenkins_url        = "https://jenkins.example.com"
+#   username           = "admin"
+#   password_ref       = "account.jenkins_password"
+#   delegate_selectors = ["delegate1"]
+#   description        = "Jenkins connector"
+#   tags               = ["managed-by-terraform"]
+#   org_id             = null
+#   project_id         = null
+# }
+
+aws = null
+# aws = {
+#   identifier         = "aws-connector"
+#   name               = "AWS"
+#   access_key_ref     = "account.aws_access_key"
+#   secret_key_ref     = "account.aws_secret_key"
+#   delegate_selectors = ["delegate1"]
+#   description        = "AWS connector"
+#   tags               = ["managed-by-terraform"]
+#   org_id             = null
+#   project_id         = null
+# }
+
+helm = null
+# helm = {
+#   identifier         = "helm-connector"
+#   name               = "Helm"
+#   url                = "https://charts.example.com"
+#   password_ref       = "account.helm_password"
+#   username           = "admin"
+#   delegate_selectors = ["delegate1"]
+#   description        = "Helm connector"
+#   tags               = ["managed-by-terraform"]
+#   org_id             = null
+#   project_id         = null
+# }
