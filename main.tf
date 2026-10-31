@@ -11,6 +11,8 @@ terraform {
 
 provider "harness" {
   account_id = var.account_id
+  endpoint         = var.harness_platform_url
+  platform_api_key = var.harness_platform_key
 }
 
 module "project" {
