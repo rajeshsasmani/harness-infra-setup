@@ -10,9 +10,9 @@ terraform {
 }
 
 provider "harness" {
-  account_id        = var.account_id
-  endpoint          = var.harness_platform_url
-  platform_api_key  = var.harness_platform_key
+  account_id       = var.account_id
+  endpoint         = var.harness_platform_url
+  platform_api_key = var.harness_platform_key
 }
 
 module "project" {
@@ -27,15 +27,13 @@ module "project" {
 }
 
 module "connectors" {
-  source = "./modules/connectors"
+  source     = "./modules/connectors"
   depends_on = [module.project]
 
-  org_id = var.organization_id
-
-  github = null
+  github  = null
   jenkins = null
-  aws = null
-  helm = null
+  aws     = null
+  helm    = null
 
   # If you later enable connectors, set project_id to the project created above.
   # Example:

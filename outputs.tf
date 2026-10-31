@@ -1,14 +1,14 @@
 output "project_id" {
   description = "Harness project resource ID."
-  value       = harness_platform_project.this.id
+  value       = module.project.id
 }
 
 output "project_identifier" {
   description = "Harness project identifier."
-  value       = harness_platform_project.this.identifier
+  value       = module.project.identifier
 }
 
 output "project_name" {
   description = "Harness project name."
-  value       = harness_platform_project.this.name
+  value       = var.project_name
 }
