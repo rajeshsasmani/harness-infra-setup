@@ -69,6 +69,8 @@ module "connectors" {
 ```
 
 In Terraform Cloud, set the workspace working directory to the repository root
-for this existing root configuration. Values assigned to module inputs must be
-declared in the root configuration and passed to the modules. Configure the
-Harness API key as a sensitive environment variable.
+for this existing root configuration. The root accepts `HARNESS_ACCOUNT_ID` as
+a Terraform input variable (it takes precedence over `account_id`). Configure
+`HARNESS_PLATFORM_API_KEY` as a sensitive environment variable; the Harness
+provider reads it directly. Values assigned to module inputs must be declared
+in the root configuration and passed to the modules.
