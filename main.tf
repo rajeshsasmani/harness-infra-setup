@@ -30,7 +30,7 @@ module "connectors" {
   source = "./modules/connectors"
   depends_on = [module.project]
 
-  org_id = var.organization_id
+  org_id = var.org_id
 
   github = null
   jenkins = null
