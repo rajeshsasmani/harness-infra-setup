@@ -23,3 +23,19 @@ module "project" {
   color       = var.project_color
   tags        = var.project_tags
 }
+
+module "connectors" {
+  source = "./modules/connectors"
+  depends_on = [module.project]
+
+  org_id = var.organization_id
+
+  github = null
+  jenkins = null
+  aws = null
+  helm = null
+
+  # If you later enable connectors, set project_id to the project created above.
+  # Example:
+  # project_id = module.project.id
+}
