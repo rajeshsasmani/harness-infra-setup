@@ -18,7 +18,7 @@ module "project" {
 
   identifier  = var.project_identifier
   name        = var.project_name
-  org_id      = var.organization_id
+  org_id      = var.org_id
   description = var.project_description
   color       = var.project_color
   tags        = var.project_tags
