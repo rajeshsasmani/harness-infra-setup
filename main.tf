@@ -13,11 +13,13 @@ provider "harness" {
   account_id = var.account_id
 }
 
-resource "harness_platform_project" "this" {
+module "project" {
+  source = "./modules/project"
+
   identifier  = var.project_identifier
   name        = var.project_name
   org_id      = var.organization_id
-  color       = var.project_color
   description = var.project_description
+  color       = var.project_color
   tags        = var.project_tags
 }
