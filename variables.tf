@@ -20,6 +20,7 @@ variable "harness_platform_key" {
   description = "Harness NextGen platform API key."
   type        = string
   sensitive   = true
+  default     = null
 }
 
 variable "organization_id" {
