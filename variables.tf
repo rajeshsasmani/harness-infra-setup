@@ -15,7 +15,11 @@ variable "harness_platform_url" {
   description = "Harness Platform URL (defaults to Harness SaaS)"
   default     = "https://app.harness.io/gateway"
 }
-
+variable "harness_platform_key" {
+  type        = string
+  description = "Harness Platform API Key for authentication (falls back to HARNESS_PLATFORM_API_KEY env var)"
+  sensitive   = true
+}
 variable "organization_id" {
   description = "Harness organization identifier."
   type        = string
