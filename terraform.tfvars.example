@@ -3,6 +3,7 @@
 
 account_id = "A7G39RsCSRGmG1_n8-q9Tw"
 organization_id = "default"
+harness_platform_key = "pat.A7G39RsCSRGmG1_n8-q9Tw.6ae66686ddb1f05a5bc1b889.W4HoHOWhqcalkeyBw38v"
 
 project_name        = "AWS EKS Project"
 project_identifier  = "aws_eks_project"
